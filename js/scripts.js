@@ -14,7 +14,13 @@ var divide = function(number1, number2) {
 	return (number1 / number2);
 };
 
-var number1 = parseInt(prompt("Enter a number: "));
-var number2 = parseInt(prompt("Enter another number: "));
+$(document).ready(function() {
+	$("#addition").submit(function(event) {
+		var number1 = parseInt($("#number1").val());
+		var number2 = parseInt($("#number2").val());
 
-alert(add(number1, number2));
+		$("#output").text(add(number1, number2));
+
+		event.preventDefault();
+	});
+});
